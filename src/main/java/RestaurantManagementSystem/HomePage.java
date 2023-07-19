@@ -50,7 +50,7 @@ public class HomePage extends JFrame implements ActionListener{
         add(bgLbl);
     }
     
-    @Override
+@Override
     public void actionPerformed(ActionEvent clicked){
         if(clicked.getSource() == takeorderBtn){
             dispose();

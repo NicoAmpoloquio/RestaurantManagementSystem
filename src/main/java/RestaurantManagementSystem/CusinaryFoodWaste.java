@@ -3,6 +3,7 @@ package RestaurantManagementSystem;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 
 public class CusinaryFoodWaste extends JFrame implements ActionListener{
     private ImageIcon bgImage, homeImage;
@@ -10,6 +11,7 @@ public class CusinaryFoodWaste extends JFrame implements ActionListener{
     private JButton homeBtn;
     private JComboBox reportsCbox;
     private JTextArea monthAr, inventoryAr;
+    private LineBorder outline = new LineBorder(Color.BLACK);
     
     CusinaryFoodWaste(){
         setTitle("Cusinary Food Waste");
@@ -33,7 +35,7 @@ public class CusinaryFoodWaste extends JFrame implements ActionListener{
         homeBtn.addActionListener(this);
         bgLbl.add(homeBtn);
         
-        String[] choice = {"Inventory", "Sales", "Waste"};
+        String[] choice = {"Waste", "Sales", "Inventory"};
         reportsCbox = new JComboBox(choice);
         reportsCbox.setBounds(50, 150, 100, 20);
         reportsCbox.setOpaque(true);
@@ -48,12 +50,14 @@ public class CusinaryFoodWaste extends JFrame implements ActionListener{
         monthAr.setBounds(50, 180, 100, 300);
         monthAr.setEditable(false);
         monthAr.setOpaque(false);
+        monthAr.setBorder(outline);
         bgLbl.add(monthAr);
         
         inventoryAr = new JTextArea ("Inventory (tabular)");
         inventoryAr.setBounds(175, 180, 600, 300);
         inventoryAr.setEditable(false);
         inventoryAr.setOpaque(false);
+        inventoryAr.setBorder(outline);
         bgLbl.add(inventoryAr);
         
         add(bgLbl);
@@ -68,12 +72,15 @@ public class CusinaryFoodWaste extends JFrame implements ActionListener{
             String selectedReport = (String) reportsCbox.getSelectedItem();
             switch (selectedReport) {
                 case "Inventory":
+                    dispose();
                     new CusinaryInventory();
                     break;
                 case "Sales":
+                    dispose();
                     new CusinarySales();
                     break;
                 case "Waste":
+                    dispose();
                     new CusinaryFoodWaste();
                     break;
                 default:

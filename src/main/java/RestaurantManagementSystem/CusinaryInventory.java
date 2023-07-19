@@ -3,6 +3,7 @@ package RestaurantManagementSystem;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 
 public class CusinaryInventory extends JFrame implements ActionListener{
     private ImageIcon bgImage, homeImage;
@@ -10,6 +11,7 @@ public class CusinaryInventory extends JFrame implements ActionListener{
     private JButton homeBtn;
     private JComboBox reportsCbox;
     private JTextArea monthAr, inventoryAr;
+    private LineBorder outline = new LineBorder(Color.BLACK);
     
     CusinaryInventory(){
         setTitle("Cusinary Inventory");
@@ -48,12 +50,14 @@ public class CusinaryInventory extends JFrame implements ActionListener{
         monthAr.setBounds(50, 180, 100, 300);
         monthAr.setEditable(false);
         monthAr.setOpaque(false);
+        monthAr.setBorder(outline);
         bgLbl.add(monthAr);
         
         inventoryAr = new JTextArea ("Inventory (tabular)");
         inventoryAr.setBounds(175, 180, 600, 300);
         inventoryAr.setEditable(false);
         inventoryAr.setOpaque(false);
+        inventoryAr.setBorder(outline);
         bgLbl.add(inventoryAr);
         
         add(bgLbl);
@@ -69,12 +73,15 @@ public class CusinaryInventory extends JFrame implements ActionListener{
             String selectedReport = (String) reportsCbox.getSelectedItem();
             switch (selectedReport) {
                 case "Inventory":
+                    dispose();
                     new CusinaryInventory();
                     break;
                 case "Sales":
+                    dispose();
                     new CusinarySales();
                     break;
                 case "Waste":
+                    dispose();
                     new CusinaryFoodWaste();
                     break;
                 default:
