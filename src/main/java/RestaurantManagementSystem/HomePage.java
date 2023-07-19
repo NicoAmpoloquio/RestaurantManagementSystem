@@ -17,10 +17,10 @@ public class HomePage extends JFrame implements ActionListener{
         setSize(900, 650);
         setVisible(true);
 
-        bgImage  = new ImageIcon("C:\\Users\\Nico\\Desktop\\img\\ResizedBG.jpg");
+        bgImage  = new ImageIcon("C:\\Users\\Nico\\Documents\\NetBeansProjects\\RestaurantManagementSystem\\src\\main\\java\\images\\ResizedBG.jpg");
         bgLbl = new JLabel(bgImage);
         
-        logoImage = new ImageIcon("C:\\Users\\Nico\\Desktop\\img\\Logo100x100.png");
+        logoImage = new ImageIcon("C:\\Users\\Nico\\Documents\\NetBeansProjects\\RestaurantManagementSystem\\src\\main\\java\\images\\Logo100x100.png");
         logoLbl = new JLabel(logoImage);
         logoLbl.setBounds(387, 150, logoImage.getIconWidth(), logoImage.getIconHeight());
         bgLbl.add(logoLbl);

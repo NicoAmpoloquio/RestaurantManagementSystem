@@ -15,14 +15,14 @@ public class CusinaryReports extends JFrame implements ActionListener{
         setSize(900, 650);
         setVisible(true);
 
-        bgImage  = new ImageIcon("C:\\Users\\Nico\\Desktop\\img\\ResizedBG.jpg");
+        bgImage  = new ImageIcon("C:\\Users\\Nico\\Documents\\NetBeansProjects\\RestaurantManagementSystem\\src\\main\\java\\images\\ResizedBG.jpg");
         bgLbl = new JLabel(bgImage);
         
         reportsLbl = new JLabel("Cusinary Reports");
         reportsLbl.setBounds(390, 120, 100, 50);
         bgLbl.add(reportsLbl);
         
-        homeImage = new ImageIcon("C:\\Users\\Nico\\Desktop\\img\\Home.png");
+        homeImage = new ImageIcon("C:\\Users\\Nico\\Documents\\NetBeansProjects\\RestaurantManagementSystem\\src\\main\\java\\images\\Home.png");
         homeBtn = new JButton (homeImage);
         homeBtn.setBounds(50, 90, homeImage.getIconWidth(), homeImage.getIconHeight());
         homeBtn.setContentAreaFilled(false);
